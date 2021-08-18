@@ -1,7 +1,6 @@
-
+require("dotenv").config();
 const express = require("express");
 const port = 3001
-require("dotenv").config();
 const app = express()
 app.use(express.json())
 
@@ -11,7 +10,9 @@ const studentData = [
     {id:2, name:"Dera", course:"geography"},
     {id:3, name:"Mayo", course:"chemistry"},
     {id:4, name:"Taiwo", course:"design"},
-    {id:5, name:"kenny", course:"account"}
+    {id:5, name:"kenny", course:"account"},
+    {id:6, name:"judith", course:"boiTech"},
+    {id:7, name:"justin", course:"aviator"}
 ]
 // console.log(studentData)
 

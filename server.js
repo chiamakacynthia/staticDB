@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
-const port = 3001
-const app = express()
-app.use(express.json())
+const port = 3001;
+const app = express();
+app.use(express.json());
 
 
 const studentData = [
@@ -12,7 +12,9 @@ const studentData = [
     {id:4, name:"Taiwo", course:"design"},
     {id:5, name:"kenny", course:"account"},
     {id:6, name:"judith", course:"boiTech"},
-    {id:7, name:"justin", course:"aviator"}
+    {id:7, name:"justin", course:"aviator"},
+    {id:8, name:"goody", course:"full stack"}
+
 ]
 // console.log(studentData)
 

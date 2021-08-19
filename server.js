@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
-const port = 3001
-const app = express()
-app.use(express.json())
+const port = 3001;
+const app = express();
+app.use(express.json());
 
 
 const studentData = [
@@ -12,7 +12,9 @@ const studentData = [
     {id:4, name:"Taiwo", course:"design"},
     {id:5, name:"kenny", course:"account"},
     {id:6, name:"judith", course:"boiTech"},
-    {id:7, name:"justin", course:"aviator"}
+    {id:7, name:"justin", course:"aviator"},
+    {id:8, name:"goody", course:"full stack"}
+
 ]
 // console.log(studentData)
 
@@ -20,11 +22,11 @@ const studentData = [
 
 app.get("/", (req, res) =>{
     res.send("server is ready")
-})
+});
 
 app.get("/api/studentdata", (req, res) =>{
     res.status(200).json(studentData)
-})
+});
 
 app.post("/api/studentdata", (req, res) =>{
     if(!studentData){
@@ -38,7 +40,7 @@ app.post("/api/studentdata", (req, res) =>{
     studentData.push(newStudent)
     res.status(200).json({message:"done", data: studentData})
     
-})
+});
 
 app.get("/api/student/:id", (req, res)=>{
     const studentId = studentData.find((student)=>student.id === parseInt(req.params.id))
@@ -46,7 +48,7 @@ app.get("/api/student/:id", (req, res)=>{
         console.log(`no user with this id: ${req.params.id}`)
     }
     res.status(200).json({message:`student id: ${req.params.id}`, data: studentId})
-})
+});
 app.listen(port, ()=>{
     console.log(`server is listening to: ${port}`)
-})
+});
